@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+group 'blockreader'
+version '1.0'
+
+sourceCompatibility = 10
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+application {
+    mainClass = 'blockreader.BlockReader'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'blockreader.BlockReader'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
